@@ -27,6 +27,7 @@ class Answers(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	answer_type = db.Column(db.String(32), unique=False) # most of the time, text. But it could be picture
 	answer = db.Column(db.String(128), unique=False)
+	correct_answer = db.Column(db.Boolean())
 	question_id = db.Column(db.Integer, db.ForeignKey('question.id'))
 	responses = db.relationship("Responses", backref='responses', lazy='dynamic')
 

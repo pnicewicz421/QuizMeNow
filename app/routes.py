@@ -1,7 +1,7 @@
 from flask import render_template, flash, redirect, request, jsonify
 from app import app
 from app.forms import EnterRoom
-#frpm app.models import User, Question, Answers, Responses
+from app.models import User, Question, Answers, Responses
 
 
 @app.route('/', methods=['POST', 'GET'])

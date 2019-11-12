@@ -1,8 +1,21 @@
-<html>
-	<head>
-		<title> Quiz Me Now </title>
-	</head>
-	<body>
-		<h1>Hello, {{ user.username }}!</h1>
-	</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+			<h1>Hello, there! Please introduce yourself</h1>
+			<form action="/enterroom" method="post">
+				{{ form.hidden_tag() }}
+				<p>
+
+					{{ form.username.label }}<br>
+					{{ form.username(size=32) }}
+
+
+					{% for error in form.username.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+
+				<p> {{ form.enterroom() }} </p>
+			</form>
+				
+{% endblock %}
